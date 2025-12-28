@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Web Page</title>
+</head>
+<body>
+
+<h1>My C++ Powered Web App</h1>
+
+<input type="number" id="num1">
+<input type="number" id="num2">
+
+<button onclick="sendData()">Add</button>
+
+<p id="result"></p>
+
+<script>
+function sendData() {
+    let a = document.getElementById("num1").value;
+    let b = document.getElementById("num2").value;
+
+    fetch(`/add?x=${a}&y=${b}`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("result").innerText = "Result: " + data;
+        });
+}
+</script>
+
+</body>
+</html>
