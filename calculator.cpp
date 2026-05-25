@@ -33,5 +33,9 @@ int main(){
      else{
             cout<<"enter a valid operator ";
         }
-    return 0;
+        
+    int y;
+    cin>>y;
+    int d;
+    cin>>d;
     }

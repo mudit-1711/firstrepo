@@ -1,0 +1,5 @@
+# x, y, z = map(int ,input().split())
+# a = input()
+# print(a.split())
+arr = list(map(int, input().split()))
+print(arr)
