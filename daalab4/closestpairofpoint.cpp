@@ -4,25 +4,19 @@
 #include <algorithm>
 #include <iomanip>
 #include <cfloat>
-
 using namespace std;
-
 struct Point {
     double x, y;
 };
-
 bool compareX(const Point& a, const Point& b) {
     return a.x < b.x;
 }
-
 bool compareY(const Point& a, const Point& b) {
     return a.y < b.y;
 }
-
 double dist(Point p1, Point p2) {
     return sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
-
 double bruteForce(const vector<Point>& pts, int l, int r, Point& p1, Point& p2) {
     double min_d = DBL_MAX;
     for (int i = l; i <= r; ++i) {
@@ -37,7 +31,6 @@ double bruteForce(const vector<Point>& pts, int l, int r, Point& p1, Point& p2) 
     }
     return min_d;
 }
-
 double stripClosest(vector<Point>& strip, double d, Point& p1, Point& p2) {
     double min_d = d;
     sort(strip.begin(), strip.end(), compareY);
@@ -53,7 +46,6 @@ double stripClosest(vector<Point>& strip, double d, Point& p1, Point& p2) {
     }
     return min_d;
 }
-
 double closestUtil(vector<Point>& pts, int l, int r, Point& p1, Point& p2) {
     if (r - l <= 3) {
         return bruteForce(pts, l, r, p1, p2);
@@ -91,9 +83,11 @@ double closestUtil(vector<Point>& pts, int l, int r, Point& p1, Point& p2) {
 
 int main() {
     int n;
+    cout<<"entetr n ";
     if (!(cin >> n) || n < 2) {
         return 0;
     }
+    cout<<"enter points";
     vector<Point> pts(n);
     for (int i = 0; i < n; ++i) {
         cin >> pts[i].x >> pts[i].y;

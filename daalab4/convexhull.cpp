@@ -33,8 +33,11 @@ void quickHull(const vector<Point>& pts, Point a, Point b, set<Point>& hull) {
 }
 int main() {
     int n;
-    if (!(cin >> n) || n < 1) return 0;
+    cout<<"enter n ";
+    cin>>n;
+    if (n < 1) return 0;
     vector<Point> pts(n);
+    cout<<"enter points ";
     for (int i = 0; i < n; i++) {
         cin >> pts[i].x >> pts[i].y;
     }
